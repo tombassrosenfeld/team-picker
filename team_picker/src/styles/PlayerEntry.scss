@@ -1,0 +1,17 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	display: block;
+
+
+	button, input {
+		width: 40vw;
+		height: 5vh;
+
+	}
+
+	input, button, label {
+		margin: 2vh;
+		
+	}
+}

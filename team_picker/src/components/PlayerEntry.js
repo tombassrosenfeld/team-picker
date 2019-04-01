@@ -7,7 +7,7 @@ class PlayerEntry extends Component {
 	constructor(props){
 		super(props)
 
-		this.state = {
+		this.state ={
 			input: "",
 			players: [],
 		}
@@ -16,44 +16,50 @@ class PlayerEntry extends Component {
 		
 		this.handleClick = this.handleClick.bind(this);
 
-		this.handleSubmit = this.handleSubmit.bind(this);
+		// this.handleSubmit = this.handleSubmit.bind(this);
 
 	}
 
 	handleChange(e) {
 		this.setState({ input: e.currentTarget.value });
+		console.log(this.state.input);
 	}
 
-	handleClick() {
+	handleClick(e) {
+		e.preventDefault();
 		this.setState({ 
-			players: [this.state.input].concat(this.state.players),
+
+			players: this.state.input ? [this.state.input].concat(this.state.players) : this.state.players,
 			input: "",
 
 		});
-		console.log(this.state.players)
+		console.log(this.state.players);
 
 	}
 
-	handleSubmit() {
-		console.log(this.state);
-	}
+	// handleSubmit() {
+	// 	console.log(this.state);
+	// }
 
 
 
 	render() {
 	    return (
 		    <div className="PlayerEntry">
-		    	<form className="form" onSubmit={ () => this.handleSubmit }>
+		    	<form className="form" /*onSubmit={ () => this.handleSubmit }*/>
 		    		<label htmlFor="playerName">Please enter your player names.</label>
-		    		<input 
+		    		<div>
+		    			<input 
 		    			onChange={ this.handleChange }
+		    			value={ this.state.input }
 		    			id="playerName" 
 		    			type="text" 
 		    			name="PlayerName" 
-		    			value={this.state.input}/>
+		    			/>
 
-		    		<button
-		    			onSubmit={ this.state.input ? this.handleClick : null }>Add Player</button>
+			    		<button
+			    			onClick={ this.handleClick }>Add Player</button>
+		    		</div>
 		    	</form>
 
 		    	<ol className="playerList">
