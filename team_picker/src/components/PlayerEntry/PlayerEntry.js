@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import '../styles/style.css';
+import '../../styles/style.css';
 
 class PlayerEntry extends Component {
 
@@ -16,7 +16,7 @@ class PlayerEntry extends Component {
 		
 		this.handleClick = this.handleClick.bind(this);
 
-		// this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 
 	}
 
@@ -37,16 +37,17 @@ class PlayerEntry extends Component {
 
 	}
 
-	// handleSubmit() {
-	// 	console.log(this.state);
-	// }
+	handleSubmit(e) {
+		e.preventDefault();
+		this.props.savePlayers(this.state.players);
+	}
 
 
 
 	render() {
 	    return (
 		    <div className="PlayerEntry">
-		    	<form className="form" /*onSubmit={ () => this.handleSubmit }*/>
+		    	<form className="form" onSubmit={ () => this.handleSubmit }>
 		    		<label htmlFor="playerName">Please enter your player names.</label>
 		    		<div>
 		    			<input 
@@ -60,6 +61,7 @@ class PlayerEntry extends Component {
 			    		<button
 			    			onClick={ this.handleClick }>Add Player</button>
 		    		</div>
+		    		<button type="submit">Submit players</button>
 		    	</form>
 
 		    	<ol className="playerList">
