@@ -64,9 +64,9 @@ class PlayerEntry extends Component {
 
 		    	<ol className="playerList">
 			    	{
-			    		this.state.players.map(( i ) => (
-				    		<li key={ i } className="listItem">
-				    			{ i }
+			    		this.state.players.map(( item, i ) => (
+				    		<li key={ item, i } className="listItem">
+				    			{ i + 1 } { item }
 				    		</li>
 				    	))
 			    	}
