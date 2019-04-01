@@ -1,0 +1,47 @@
+@import 'reset.css';
+@font-face {}
+h1 {
+  font-size: 3em;
+}
+
+body {
+  font-size: 100%;
+}
+@media (max-width: 500px) {
+  body {
+    font-size: 80%;
+  }
+}
+
+.app_wrapper {
+  padding: 0 10vw;
+}
+@media (max-width: 500px) {
+  .app_wrapper {
+    padding: 0;
+  }
+}
+
+.container {
+  padding: 2vw;
+}
+
+.Header {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  display: block;
+}
+.form button, .form input {
+  width: 40vw;
+  height: 5vh;
+}
+.form input, .form button, .form label {
+  margin: 2vh;
+}
+
+/*# sourceMappingURL=style.css.map */
