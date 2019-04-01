@@ -3,31 +3,36 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { createStore } from 'redux';
 import initial from './data/initial.js';
 import reducer from './data/reducer.js';
+import persistState from "redux-localstorage";
+import { Provider } from 'react-redux';
+import { createStore, compose } from 'redux';
 
 
-
+const composeEnhancers =
+	window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 
 const store = createStore(
 	reducer, 
 	initial,
-	window.__REDUX_DEVTOOLS_EXTENSION__
-    && window.__REDUX_DEVTOOLS_EXTENSION__(),
+	composeEnhancers(persistState())
 );
 
-const render = () => {
-	let state = store.getState();
-	ReactDOM.render(<App />, 
-	document.getElementById('root')
-	);
-};
+
+	
+ReactDOM.render(
+	<Provider store={ store }>
+		<App />
+	</Provider>, 
+document.getElementById('root')
+);
 
 
-store.subscribe(render);
-render();
+
+
+
 	
 	
 
