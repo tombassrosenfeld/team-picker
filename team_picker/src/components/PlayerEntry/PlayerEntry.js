@@ -9,7 +9,8 @@ class PlayerEntry extends Component {
 
 		this.state =({
 					input: "",
-					players: [ 'Robert', 'Carl', 'Emma', 'Sarah', 'Anita', 'Bob', 'Luke', 'Ralph' ],
+					players: [],
+					message: `Please enter ${ this.props.totalPlayers } player names.`,
 				})
 
 		this.handleChange = this.handleChange.bind(this);
@@ -20,6 +21,8 @@ class PlayerEntry extends Component {
 
 	}
 
+
+
 	handleChange(e) {
 		this.setState({ input: e.currentTarget.value });
 		
@@ -27,32 +30,34 @@ class PlayerEntry extends Component {
 
 	handleClick(e) {
 		e.preventDefault();
-		this.setState({ 
 
-			players: this.state.input ? [this.state.input].concat(this.state.players) : this.state.players,
+		this.setState({ 
+			 
+			players: this.state.input && this.state.players.length < this.props.totalPlayers ? [this.state.input].concat(this.state.players) : { message: "You have all the players you need!"},
 			input: "",
 
-		});
-		
 
+		});
 	}
 
 	handleSubmit(e) {
+		
 		e.preventDefault();
-		// players.length 
-		this.props.savePlayers(this.state);
+		this.state.players.length === this.props.totalPlayers ? this.props.savePlayers(this.state) : this.setState({ message: `You need to add ${ this.props.totalPlayers - this.state.players.length } more player${ this.props.totalPlayers - this.state.players.length !== 1 ? "s" : "" }.`});
 	}
 
-
+	
 
 	render() {
 
-			this.props.savePlayers(this.state.players);
+
+			
 			
     return (
 	    <div className="PlayerEntry">
-	    	<form className="form" onSubmit={ () => this.handleSubmit }>
-	    		<label htmlFor="playerName">Please enter { this.props.totalPlayers } player names.</label>
+	    	<form className="form" onSubmit={ this.handleSubmit }>
+	    		<label htmlFor="playerName">{ this.state.message }</label>
+	    		<p>{ this.state.errorMessage }</p>
 	    		<div>
 	    			<input 
 	    			onChange={ this.handleChange }
@@ -64,7 +69,7 @@ class PlayerEntry extends Component {
 		    		<button
 		    			onClick={ this.handleClick }>Add Player</button>
 	    		</div>
-	    		<button type="submit">Submit players</button>
+	    		<button type='submit'>Submit players</button>
 	    	</form>
 	    	<ol className="playerList">
 		    	{
