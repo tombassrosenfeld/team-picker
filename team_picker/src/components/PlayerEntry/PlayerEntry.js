@@ -7,10 +7,10 @@ class PlayerEntry extends Component {
 	constructor(props){
 		super(props)
 
-		this.state ={
-			input: "",
-			players: [],
-		}
+		this.state =({
+					input: "",
+					players: [ 'Robert', 'Carl', 'Emma', 'Sarah', 'Anita', 'Bob', 'Luke', 'Ralph' ],
+				})
 
 		this.handleChange = this.handleChange.bind(this);
 		
@@ -22,7 +22,7 @@ class PlayerEntry extends Component {
 
 	handleChange(e) {
 		this.setState({ input: e.currentTarget.value });
-		console.log(this.state.input);
+		
 	}
 
 	handleClick(e) {
@@ -33,49 +33,51 @@ class PlayerEntry extends Component {
 			input: "",
 
 		});
-		console.log(this.state.players);
+		
 
 	}
 
 	handleSubmit(e) {
 		e.preventDefault();
-		this.props.savePlayers(this.state.players);
+		// players.length 
+		this.props.savePlayers(this.state);
 	}
 
 
 
 	render() {
-	    return (
-		    <div className="PlayerEntry">
-		    	<form className="form" onSubmit={ () => this.handleSubmit }>
-		    		<label htmlFor="playerName">Please enter your player names.</label>
-		    		<div>
-		    			<input 
-		    			onChange={ this.handleChange }
-		    			value={ this.state.input }
-		    			id="playerName" 
-		    			type="text" 
-		    			name="PlayerName" 
-		    			/>
 
-			    		<button
-			    			onClick={ this.handleClick }>Add Player</button>
-		    		</div>
-		    		<button type="submit">Submit players</button>
-		    	</form>
-
-		    	<ol className="playerList">
-			    	{
-			    		this.state.players.map(( item, i ) => (
-				    		<li key={ item, i } className="listItem">
-				    			{ i + 1 } { item }
-				    		</li>
-				    	))
-			    	}
-			    </ol>
-		    	
-		    </div>
-	    );
+			this.props.savePlayers(this.state.players);
+			
+    return (
+	    <div className="PlayerEntry">
+	    	<form className="form" onSubmit={ () => this.handleSubmit }>
+	    		<label htmlFor="playerName">Please enter { this.props.totalPlayers } player names.</label>
+	    		<div>
+	    			<input 
+	    			onChange={ this.handleChange }
+	    			value={ this.state.input }
+	    			id="playerName" 
+	    			type="text" 
+	    			name="PlayerName" 
+	    			/>
+		    		<button
+		    			onClick={ this.handleClick }>Add Player</button>
+	    		</div>
+	    		<button type="submit">Submit players</button>
+	    	</form>
+	    	<ol className="playerList">
+		    	{
+		    		this.state.players.map(( item, i ) => (
+			    		<li key={ i } className="listItem">
+			    			{ i + 1 } { item }
+			    		</li>
+			    	))
+		    	}
+		    </ol>
+	    	
+	    </div>
+	  );
 	}
 }
 

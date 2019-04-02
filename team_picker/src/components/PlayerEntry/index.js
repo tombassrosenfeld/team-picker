@@ -2,10 +2,17 @@ import { connect } from 'react-redux';
 import PlayerEntry from './PlayerEntry';
 import { submitPlayers } from '../../data/actions';
 
+const mapStateToProps = ({ totalPlayers }) => ({
+	totalPlayers,
+});
+
 const mapDispatchToProps = dispatch => {
 	return {
-		savePlayers: (data) => dispatch(submitPlayers(data)),
+		savePlayers: (data) => {
+			// console.log(data);
+			dispatch(submitPlayers(data))
+		},
 	};
 };
 
-export default connect(null, mapDispatchToProps)(PlayerEntry);
+export default connect(mapStateToProps, mapDispatchToProps)(PlayerEntry);

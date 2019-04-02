@@ -1,7 +1,8 @@
 const initial = {
-	players: ['Geoff', 'James', 'Carly', 'Anne'],
+	players: [],
 	teamSize: 5,
 	numberOfTeams: 2,
+	totalPlayers: 10,
 }
 
 export default initial;
