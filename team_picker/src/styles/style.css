@@ -26,6 +26,20 @@ body {
   padding: 2vw;
 }
 
+table {
+  margin: 2vw;
+  display: inline-block;
+  colour: orange;
+}
+table td, table tr {
+  border: 1px solid #555;
+}
+
+.table {
+  display: inline-block;
+  width: 40%;
+}
+
 .Header {
   display: flex;
   justify-content: center;
@@ -40,8 +54,8 @@ body {
   width: 40vw;
   height: 5vh;
 }
-.form input, .form button, .form label, .form p {
-  margin: 2vh;
+.form input, .form button, .form label {
+  margin: 2vw;
 }
 
 /*# sourceMappingURL=style.css.map */

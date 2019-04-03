@@ -17,7 +17,9 @@ let shuffle = (array) => {
 let submitPlayers = (state, { players }) => {
 	return ({
 			...state,
+			teams: [],
 			players,
+
 		});
 };
 
@@ -30,10 +32,9 @@ let playerShuffle = (state) => {
 
 let createTeams = (state) => {
 	
-	for (let i = 1; i <= state.numberOfTeams; i += 1) {
-		let team = state.players.filter((player, index) => (index + 1) % i === 0 );	
+	for (let i = 0; i < state.numberOfTeams; i += 1) {
+		let team = state.players.filter((player, index) => (index % state.numberOfTeams === i ));	
 		state.teams.push(team);
-		console.log(team);
 	};
 	return state;
 };
