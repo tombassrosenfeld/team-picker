@@ -9,7 +9,8 @@ class PlayerEntry extends Component {
 
 		this.state =({
 					input: "",
-					players: [ 'Robert', 'Carl', 'Emma', 'Sarah', 'Anita', 'Bob', 'Luke', 'Ralph' ],
+					players: [],
+					errorMessage: "",
 				})
 
 		this.handleChange = this.handleChange.bind(this);
@@ -20,6 +21,8 @@ class PlayerEntry extends Component {
 
 	}
 
+
+
 	handleChange(e) {
 		this.setState({ input: e.currentTarget.value });
 		
@@ -27,32 +30,32 @@ class PlayerEntry extends Component {
 
 	handleClick(e) {
 		e.preventDefault();
-		this.setState({ 
 
-			players: this.state.input ? [this.state.input].concat(this.state.players) : this.state.players,
-			input: "",
-
-		});
-		
-
+		return this.state.players.length < this.props.totalPlayers ? ( this.state.input ? 
+			this.setState({ 
+				errorMessage: "",
+				players:  [this.state.input].concat(this.state.players),
+				input: "", }) : this.state ) : this.setState({ errorMessage: "You have enough players!", input: "",})
 	}
 
 	handleSubmit(e) {
+		
 		e.preventDefault();
-		// players.length 
-		this.props.savePlayers(this.state);
+		this.state.players.length === this.props.totalPlayers ? this.props.savePlayers(this.state) : this.setState({ errorMessage: `You need to add ${ this.props.totalPlayers - this.state.players.length } more player${ this.props.totalPlayers - this.state.players.length !== 1 ? "s" : "" }.`});
 	}
 
-
+	
 
 	render() {
 
-			this.props.savePlayers(this.state.players);
+
+			
 			
     return (
 	    <div className="PlayerEntry">
-	    	<form className="form" onSubmit={ () => this.handleSubmit }>
+	    	<form className="form" onSubmit={ this.handleSubmit }>
 	    		<label htmlFor="playerName">Please enter { this.props.totalPlayers } player names.</label>
+	    		<p>{ this.state.errorMessage }</p>
 	    		<div>
 	    			<input 
 	    			onChange={ this.handleChange }
@@ -64,9 +67,9 @@ class PlayerEntry extends Component {
 		    		<button
 		    			onClick={ this.handleClick }>Add Player</button>
 	    		</div>
-	    		<button type="submit">Submit players</button>
+	    		<button type='submit'>Submit players</button>
 	    	</form>
-	    	<ol className="playerList">
+	    	<ul className="playerList">
 		    	{
 		    		this.state.players.map(( item, i ) => (
 			    		<li key={ i } className="listItem">
@@ -74,7 +77,7 @@ class PlayerEntry extends Component {
 			    		</li>
 			    	))
 		    	}
-		    </ol>
+		    </ul>
 	    	
 	    </div>
 	  );

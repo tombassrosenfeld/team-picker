@@ -1,8 +1,8 @@
 
-export const submitPlayers = (data) => {
-	console.log(data);
+export const submitPlayers = ({ players }) => {
+	
 	return {
 		type: 'submitPlayers',
-		players: data,
+		players,
 	}
 }
