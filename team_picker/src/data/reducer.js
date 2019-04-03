@@ -14,14 +14,6 @@ let shuffle = (array) => {
   return array;
 };
 
-let playerShuffle = (state) => {
-	return {
-		...state,
-		players: shuffle(state.players),
-	}
-}
-
-
 let submitPlayers = (state, { players }) => {
 	return ({
 			...state,
@@ -29,13 +21,40 @@ let submitPlayers = (state, { players }) => {
 		});
 };
 
+let playerShuffle = (state) => {
+	return {
+		...state,
+		players: shuffle(state.players),
+	}
+}
+
+let createTeams = (state) => {
+	
+	for (let i = 1; i <= state.numberOfTeams; i += 1) {
+		let team = state.players.filter((player, index) => (index + 1) % i === 0 );	
+		state.teams.push(team);
+		console.log(team);
+	};
+	return state;
+};
+
+
+
 
 const reducer = (state, action) => {
 	switch (action.type) {
-		case 'submitPlayers': return playerShuffle(submitPlayers(state, action));
+		case 'submitPlayers': return createTeams(playerShuffle(submitPlayers(state, action)));
 
 		default: return state;
 	}
 };
 
 export default reducer;
+
+
+
+
+
+
+
+
