@@ -35,7 +35,9 @@ class PlayerEntry extends Component {
 			this.setState({ 
 				errorMessage: "",
 				players:  [this.state.input].concat(this.state.players),
-				input: "", }) : this.state ) : this.setState({ errorMessage: "You have enough players!", input: "",})
+				input: "", }) : this.state ) : this.setState({ errorMessage: "You have enough players!", input: "",
+			}
+		)
 	}
 
 	handleSubmit(e) {
@@ -55,33 +57,40 @@ class PlayerEntry extends Component {
 	    <div className="PlayerEntry container">
 	    	<form className="form" onSubmit={ this.handleSubmit }>
 	    		<label htmlFor="playerName">Enter { this.props.totalPlayers } player names.</label>
-	    		<p>{ this.state.errorMessage }</p>
-	    		<div>
-	    			<input 
-	    			onChange={ this.handleChange }
-	    			value={ this.state.input }
-	    			id="playerName" 
-	    			type="text" 
-	    			name="PlayerName" 
-	    			/>
-		    		<button
-		    			onClick={ this.handleClick }>Add Player</button>
-	    		</div>
-	    		<button type='submit'>Submit players</button>
-	    	</form>
-	    	<table className="playerList">
-		    	{
-		    		this.state.players.map(( item, i ) => (
-		    			<tbody>
-				    		<tr key={ i }>
-				    			<td>{ i + 1 }</td> 
-				    			<td>{ item }</td>
-				    		</tr>
-				    	</tbody>
-			    	))
-		    	}
-		    </table>
-	    	
+	    		<div className="formElements">
+	    			
+	    			<div className="playerInput">
+		    			<input 
+		    			onChange={ this.handleChange }
+		    			value={ this.state.input }
+		    			id="playerName" 
+		    			type="text" 
+		    			name="PlayerName" 
+		    			/>
+	    			</div>
+	    			<div className="buttons">
+			    		<button
+			    			onClick={ this.handleClick }>Add Player</button>
+			    		<button className="button" type='submit'>Submit players</button>
+	    			</div>	
+
+		    		</div>
+		    		<p className="errorMessage">{ this.state.errorMessage }</p>
+	    		</form>
+	    	<div className="tableContainer">
+		    	<table className="playerList table">
+			    	{
+			    		this.state.players.map(( item, i ) => (
+			    			<tbody>
+					    		<tr key={ i }>
+					    			<td className="numberCol">{ i + 1 }</td> 
+					    			<td>{ item }</td>
+					    		</tr>
+					    	</tbody>
+				    	))
+			    	}
+			    </table>
+	    	</div>
 	    </div>
 	  );
 	}

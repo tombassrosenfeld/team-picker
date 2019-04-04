@@ -1,19 +1,39 @@
-.form {
+.formElements {
 	display: flex;
-	flex-direction: column;
-	display: block;
-}
-
-
-.button, input {
-	width: 40vw;
-	height: 5vh;
-
-}
-
-input, button, label, p {
-	margin: 2vw;
+	flex-direction: row;
 	
 }
 
+.errorMessage {
+	height: 1em;
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	color: red;
+}
+
+.buttons, .playerInput {
+	display: flex;
+	flex-direction: column;
+}
+
+button {
+	width: 8em;
+	minimum-height: 8em;
+	border: 1px solid #ccc;
+
+	background: linear-gradient(172deg, #eee, #ccc);
+}
+
+input, button, label, p {
+	margin: 1em;
+
+	
+}
+
+input {
+	width: 16em;
+	height: 2em;
+	border: 2px solid #777;
+}
 

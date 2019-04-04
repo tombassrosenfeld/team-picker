@@ -1,31 +1,45 @@
 @import 'reset.css';
 @font-face {}
 h1 {
-  font-size: 3em;
+  font-size: 2.5em;
+  text-align: center;
+}
+@media (max-width: 380px) {
+  h1 {
+    font-size: 2em;
+  }
+}
+
+th {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+label, p, button, li, td, input {
+  font-size: 1em;
 }
 
 body {
   font-size: 100%;
   margin: 0;
 }
-@media (max-width: 500px) {
+@media (max-width: 635px) {
   body {
     font-size: 80%;
-  }
-}
-
-.app_wrapper {
-  background-color: #888;
-}
-@media (max-width: 500px) {
-  .app_wrapper {
-    padding: 0;
   }
 }
 
 .app {
   background-color: #fff;
   margin: 0 10vw;
+  height: 100vh;
+  overflow: scroll;
+  box-shadow: 0px 0px 10px 1px rgba(5, 5, 2, 0.2);
+}
+@media (max-width: 500px) {
+  .app {
+    margin: 0;
+  }
 }
 
 .container {
@@ -33,38 +47,71 @@ body {
 }
 
 table {
-  margin: 2vw;
-  display: inline-block;
-  colour: orange;
-  width: 100%;
-}
-table td, table tr {
-  border: 1px solid #555;
+  margin: 0;
+  padding: 1em;
 }
 
 .table {
   display: inline-block;
-  width: 40%;
+  border: 1px solid #eee;
+  width: 6em;
+  float: left;
+}
+
+.tableContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.numberCol {
+  min-width: 1.5em;
+  text-align: center;
 }
 
 .Header {
   display: flex;
   justify-content: center;
+  background: #0d686e;
+  background: linear-gradient(172deg, #0d686e 12%, #0a6374 89%);
+}
+.Header h1 {
+  color: #dde;
 }
 
-.form {
+.formElements {
+  display: flex;
+  flex-direction: row;
+}
+
+.errorMessage {
+  height: 1em;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: red;
+}
+
+.buttons, .playerInput {
   display: flex;
   flex-direction: column;
-  display: block;
 }
 
-.button, input {
-  width: 40vw;
-  height: 5vh;
+button {
+  width: 8em;
+  minimum-height: 8em;
+  border: 1px solid #ccc;
+  background: linear-gradient(172deg, #eee, #ccc);
 }
 
 input, button, label, p {
-  margin: 2vw;
+  margin: 1em;
+}
+
+input {
+  width: 16em;
+  height: 2em;
+  border: 2px solid #777;
 }
 
 /*# sourceMappingURL=style.css.map */

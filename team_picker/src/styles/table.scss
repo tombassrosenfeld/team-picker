@@ -1,17 +1,25 @@
 table {
 
-	margin: 2vw;
-	display: inline-block;
-	colour: orange;
-	width: 100%;
-
-
-	td, tr {
-		border: 1px solid #555;
-	} 
+	margin: 0;
+	padding: 1em;
 }
 
 .table {
 	display: inline-block;
-	width: 40%;
+	border: 1px solid #eee;
+	width: 6em;
+	float: left;
+	
 }
+
+.tableContainer {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+}
+
+.numberCol {
+	min-width: 1.5em;
+	text-align: center;
+}
+
