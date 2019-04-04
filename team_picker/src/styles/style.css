@@ -54,7 +54,7 @@ table td, table tr {
   width: 40vw;
   height: 5vh;
 }
-.form input, .form button, .form label {
+.form input, .form button, .form label, .form p {
   margin: 2vw;
 }
 

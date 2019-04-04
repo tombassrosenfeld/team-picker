@@ -2,8 +2,10 @@ import { connect } from 'react-redux';
 import TeamDisplay from './TeamDisplay';
 
 
-const mapStateToProps = ({ teams }) => ({
+
+const mapStateToProps = ({ teams, playersSubmitted }) => ({
 	teams,
+	playersSubmitted,
 });
 
 
