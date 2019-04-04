@@ -6,3 +6,7 @@ export const submitPlayers = ({ players }) => {
 		players,
 	}
 }
+
+export const reset = () => {
+	return { type: 'reset', }
+}

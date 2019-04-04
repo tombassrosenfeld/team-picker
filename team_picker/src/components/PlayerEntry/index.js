@@ -9,7 +9,6 @@ const mapStateToProps = ({ totalPlayers }) => ({
 const mapDispatchToProps = dispatch => {
 	return {
 		savePlayers: (data) => {
-			console.log(data);
 			dispatch(submitPlayers(data))
 		},
 	};

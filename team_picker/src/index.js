@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import initial from './data/initial.js';
 import reducer from './data/reducer.js';
 import persistState from "redux-localstorage";
 import { Provider } from 'react-redux';
 import { createStore, compose } from 'redux';
+
+import './styles/style.css'
 
 
 const composeEnhancers =
@@ -24,7 +26,9 @@ const store = createStore(
 	
 ReactDOM.render(
 	<Provider store={ store }>
-		<App />
+		<div classname="app_wrapper">
+			<App />
+		</div>
 	</Provider>, 
 document.getElementById('root')
 );

@@ -9,7 +9,7 @@ class PlayerEntry extends Component {
 
 		this.state =({
 					input: "",
-					players: [],
+					players: ['Ralph', 'Brenda', 'Mark', 'Johanna', 'Bill', 'Jasper', 'Emily', 'Christine','Alfred'],
 					errorMessage: "",
 				})
 
@@ -52,9 +52,9 @@ class PlayerEntry extends Component {
 			
 			
     return (
-	    <div className="PlayerEntry">
+	    <div className="PlayerEntry container">
 	    	<form className="form" onSubmit={ this.handleSubmit }>
-	    		<label htmlFor="playerName">Please enter { this.props.totalPlayers } player names.</label>
+	    		<label htmlFor="playerName">Enter { this.props.totalPlayers } player names.</label>
 	    		<p>{ this.state.errorMessage }</p>
 	    		<div>
 	    			<input 
@@ -69,15 +69,18 @@ class PlayerEntry extends Component {
 	    		</div>
 	    		<button type='submit'>Submit players</button>
 	    	</form>
-	    	<ul className="playerList">
+	    	<table className="playerList">
 		    	{
 		    		this.state.players.map(( item, i ) => (
-			    		<li key={ i } className="listItem">
-			    			{ i + 1 } { item }
-			    		</li>
+		    			<tbody>
+				    		<tr key={ i }>
+				    			<td>{ i + 1 }</td> 
+				    			<td>{ item }</td>
+				    		</tr>
+				    	</tbody>
 			    	))
 		    	}
-		    </ul>
+		    </table>
 	    	
 	    </div>
 	  );

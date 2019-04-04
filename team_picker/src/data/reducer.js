@@ -1,3 +1,5 @@
+import initial from './initial';
+
 
 let shuffle = (array) => {
   var i = 0
@@ -18,6 +20,9 @@ let submitPlayers = (state, { players }) => {
 	return ({
 			...state,
 			players,
+			teams: [],
+			playersSubmitted: true,
+
 		});
 };
 
@@ -30,10 +35,9 @@ let playerShuffle = (state) => {
 
 let createTeams = (state) => {
 	
-	for (let i = 1; i <= state.numberOfTeams; i += 1) {
-		let team = state.players.filter((player, index) => (index + 1) % i === 0 );	
+	for (let i = 0; i < state.numberOfTeams; i += 1) {
+		let team = state.players.filter((player, index) => (index % state.numberOfTeams === i ));	
 		state.teams.push(team);
-		console.log(team);
 	};
 	return state;
 };
@@ -44,6 +48,10 @@ let createTeams = (state) => {
 const reducer = (state, action) => {
 	switch (action.type) {
 		case 'submitPlayers': return createTeams(playerShuffle(submitPlayers(state, action)));
+		case 'reset': return ({ 
+			...state, 
+			...initial,
+		});
 
 		default: return state;
 	}
