@@ -2,21 +2,31 @@
 
 body {
 	font-size: 100%;
+	
 
 	@media (max-width: 500px) {
 		font-size: 80%;
 	}
-
 }
 
 .app_wrapper {
-	padding: 0 10vw;
+	background-color: #222;
+
+	
+}
+
+.app {
+	background-color: #fff;
+	margin: 0 10vw;
+
 
 	@media (max-width: 500px) {
-		padding: 0;
+		margin: 0;
 	}
 }
 
 .container {
 	padding: 2vw;
 }
+
+

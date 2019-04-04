@@ -6,6 +6,7 @@ h1 {
 
 body {
   font-size: 100%;
+  margin: 0;
 }
 @media (max-width: 500px) {
   body {
@@ -14,12 +15,17 @@ body {
 }
 
 .app_wrapper {
-  padding: 0 10vw;
+  background-color: #888;
 }
 @media (max-width: 500px) {
   .app_wrapper {
     padding: 0;
   }
+}
+
+.app {
+  background-color: #fff;
+  margin: 0 10vw;
 }
 
 .container {
@@ -30,6 +36,7 @@ table {
   margin: 2vw;
   display: inline-block;
   colour: orange;
+  width: 100%;
 }
 table td, table tr {
   border: 1px solid #555;
@@ -50,11 +57,13 @@ table td, table tr {
   flex-direction: column;
   display: block;
 }
-.form button, .form input {
+
+.button, input {
   width: 40vw;
   height: 5vh;
 }
-.form input, .form button, .form label, .form p {
+
+input, button, label, p {
   margin: 2vw;
 }
 

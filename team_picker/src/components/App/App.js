@@ -10,12 +10,15 @@ import '../../styles/style.css';
 class App extends Component {
   render() {
     return (
-    	<div className="app_wrapper">
-	    	<div className="App container">
+    	<div className="app">
 	        <Header />
-	        { this.props.playersSubmitted ? <PlayerEntry /> : <TeamDisplay /> }
-	        <ResetButton />
-	    	</div>
+	        { !this.props.playersSubmitted ? 
+	        	<PlayerEntry /> :
+	        	<TeamDisplay /> 
+	        }
+	        <div className="container">
+	        	<ResetButton />
+    		</div>
 	    </div>
     );
   }

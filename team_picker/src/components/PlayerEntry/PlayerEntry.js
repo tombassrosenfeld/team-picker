@@ -9,7 +9,7 @@ class PlayerEntry extends Component {
 
 		this.state =({
 					input: "",
-					players: [],
+					players: ['Ralph', 'Brenda', 'Mark', 'Johanna', 'Bill', 'Jasper', 'Emily', 'Christine','Alfred'],
 					errorMessage: "",
 				})
 
@@ -52,7 +52,7 @@ class PlayerEntry extends Component {
 			
 			
     return (
-	    <div className="PlayerEntry">
+	    <div className="PlayerEntry container">
 	    	<form className="form" onSubmit={ this.handleSubmit }>
 	    		<label htmlFor="playerName">Enter { this.props.totalPlayers } player names.</label>
 	    		<p>{ this.state.errorMessage }</p>

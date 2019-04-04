@@ -8,7 +8,7 @@ class TeamDisplay extends Component {
 
 	render() {
 	    return (
-		    <div className="TeamDisplay">
+		    <div className="TeamDisplay container">
 
 		    	<h1>Here are your teams!</h1>
 	    		{

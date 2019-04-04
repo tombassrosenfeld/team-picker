@@ -9,7 +9,7 @@ const mapStateToProps = () => ({
 const mapDispatchToProps = dispatch => {
 	return {
 		buttonAction: () => {
-			dispatch(reset())
+			dispatch(reset());
 		},
 	};
 };
