@@ -23,12 +23,20 @@ td {
   font-size: 1.5em;
 }
 
-label, p, button, li, input {
+label, p, button, li, input, a {
   font-size: 1em;
 }
 
-input, button, label, p, h2 {
+input, button, label, p, h2, a {
   margin: 1em;
+}
+
+a {
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0.16em 0;
+  min-height: 20px;
 }
 
 body {
@@ -43,7 +51,7 @@ body {
 
 .app {
   background-color: #fff;
-  margin: 0 10vw;
+  margin: 0 4em;
   height: 100vh;
   overflow: scroll;
   box-shadow: 0px 0px 10px 1px rgba(5, 5, 2, 0.2);
@@ -127,14 +135,14 @@ table {
   justify-content: center;
 }
 
-button {
+button, a {
   width: 8em;
   maximum-height: 8em;
   border: 1px solid #ccc;
   background: linear-gradient(172deg, #eee, #ccc);
 }
 @media (max-width: 380px) {
-  button {
+  button, a {
     width: 16em;
   }
 }

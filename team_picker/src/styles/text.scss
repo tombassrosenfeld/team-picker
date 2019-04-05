@@ -33,10 +33,20 @@ td {
 }
 
 
-label, p, button, li,  input {
+label, p, button, li,  input, a {
 	font-size: 1em;
 }
 
-input, button, label, p, h2 {
+input, button, label, p, h2, a {
 	margin: 1em;
 }
+
+a {
+	text-decoration: none;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 0.16em 0;
+	min-height: 20px
+}
+
+

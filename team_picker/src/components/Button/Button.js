@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import '../../styles/style.css';
+
+// takes link and label props.
 
 class Button extends Component {
 
@@ -11,13 +14,14 @@ class Button extends Component {
 	}
 
 	handleClick(e) {
-		e.preventDefault();
+		
 		this.props.buttonAction();
+
 	}
 
 	render() {
 	    return (
-		    <button className="button" onClick={ this.handleClick }>{ this.props.label }</button>
+		    <Link className="button" to={ this.props.link } onClick={ this.handleClick }>{ this.props.label }</Link>
 	    );
 	}
 }
