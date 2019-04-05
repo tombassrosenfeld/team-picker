@@ -2,10 +2,10 @@ import { connect } from 'react-redux';
 import App from './App';
 
 
-const mapStateToProps = ({ playersSubmitted }) => ({
-	playersSubmitted,
-});
+// const mapStateToProps = ({  }) => ({
+
+// });
 
 
 
-export default connect(mapStateToProps)(App);
+export default connect(null)(App);

@@ -3,9 +3,8 @@ import TeamDisplay from './TeamDisplay';
 
 
 
-const mapStateToProps = ({ teams, playersSubmitted }) => ({
+const mapStateToProps = ({ teams }) => ({
 	teams,
-	playersSubmitted,
 });
 
 

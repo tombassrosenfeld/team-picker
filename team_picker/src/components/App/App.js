@@ -20,20 +20,20 @@ import '../../styles/style.css';
 class App extends Component {
   render() {
 
-    return (
-    	<Router>
-	    	<div className="app">
-		        <Header />
-		        <Switch>
-			        <Route exact path="/" component={ WelcomeScreen } />
-			        <Route exact path="/enter-players" component={ PlayerEntry } />
-			        <Route exact path="/display-teams" component={ TeamDisplay } />
-			        <Route component={ FourOhFour } />
-			      </Switch>
-			    	{/*<Footer />*/}
-		    </div>
+	return (
+		<Router>
+			<div className="app">
+				<Header />
+				<Switch>
+					<Route exact path="/" component={ WelcomeScreen } />
+					<Route exact path="/enter-players" component={ PlayerEntry } />
+					<Route exact path="/display-teams" component={ TeamDisplay } />
+					<Route component={ FourOhFour } />
+				  </Switch>
+					{/*<Footer />*/}
+			</div>
 			</Router>
-    );
+	);
   }
 }
 
