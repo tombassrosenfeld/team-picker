@@ -46,7 +46,7 @@ let changeSettings = (state, { numberOfTeams, teamSize }) => {
 		...state,
 		numberOfTeams,
 		teamSize,
-		totalPlayers: numberOfTeams + teamSize,
+		totalPlayers: numberOfTeams * teamSize,
 	}
 
 }

@@ -71,22 +71,24 @@ class PlayerEntry extends Component {
 	        		<ResetButton />
 	    			</div>	
 	    		</div>
-	    		
-	    		</form>
-	    	<div className="tableContainer">
-		    	<table className="playerList table">
-		    		<tbody>
-				    	{
-				    		this.state.players.map(( item, i ) => (
+	    	</form>
+	    	{
+	    		!this.state.players ? null : 
+	    		<div className="tableContainer">
+			    	<table className="playerList table">
+			    		<tbody>
+					    	{
+					    		this.state.players.map(( item, i ) => (
 						    		<tr key={ i }>
 						    			<td className="numberCol">{ i + 1 }</td> 
 						    			<td>{ item }</td>
 						    		</tr>
-					    	))
-				    	}
-			    	</tbody>
-			    </table>
-	    	</div>
+						    	))
+					    	}
+				    	</tbody>
+				    </table>
+	    		</div>
+	    	}
 	    </div>
 	  );
 	}
