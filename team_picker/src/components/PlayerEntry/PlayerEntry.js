@@ -10,20 +10,17 @@ class PlayerEntry extends Component {
 		super(props)
 
 		this.state =({
-					input: "",
-					players: ['Ralph', 'Brenda', 'Mark', 'Johanna', 'Bill', 'Jasper', 'Emily', 'Christine','Alfred'],
-					errorMessage: "",
-				})
+			input: "",
+			players: [],
+			errorMessage: "",
+		})
 
 		this.handleChange = this.handleChange.bind(this);
 		
 		this.handleClick = this.handleClick.bind(this);
 
 		this.handleSubmit = this.handleSubmit.bind(this);
-
 	}
-
-
 
 	handleChange(e) {
 		this.setState({ input: e.currentTarget.value });
@@ -78,16 +75,16 @@ class PlayerEntry extends Component {
 	    		</form>
 	    	<div className="tableContainer">
 		    	<table className="playerList table">
-			    	{
-			    		this.state.players.map(( item, i ) => (
-			    			<tbody>
-					    		<tr key={ i }>
-					    			<td className="numberCol">{ i + 1 }</td> 
-					    			<td>{ item }</td>
-					    		</tr>
-					    	</tbody>
-				    	))
-			    	}
+		    		<tbody>
+				    	{
+				    		this.state.players.map(( item, i ) => (
+						    		<tr key={ i }>
+						    			<td className="numberCol">{ i + 1 }</td> 
+						    			<td>{ item }</td>
+						    		</tr>
+					    	))
+				    	}
+			    	</tbody>
 			    </table>
 	    	</div>
 	    </div>

@@ -26,7 +26,7 @@ const store = createStore(
 	
 ReactDOM.render(
 	<Provider store={ store }>
-		<div classname="app_wrapper">
+		<div className="app_wrapper">
 			<App />
 		</div>
 	</Provider>, 

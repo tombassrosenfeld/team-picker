@@ -19,6 +19,10 @@ h1 {
 
 }
 
+h2 {
+	font-size: 1.5em;
+}
+
 th {
 	font-size: 1.5em;
 	text-align: center;
@@ -33,3 +37,6 @@ label, p, button, li,  input {
 	font-size: 1em;
 }
 
+input, button, label, p, h2 {
+	margin: 1em;
+}
