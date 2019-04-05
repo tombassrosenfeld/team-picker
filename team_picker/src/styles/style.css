@@ -15,7 +15,11 @@ th {
   text-align: center;
 }
 
-label, p, button, li, td, input {
+td {
+  font-size: 1.5em;
+}
+
+label, p, button, li, input {
   font-size: 1em;
 }
 
@@ -54,7 +58,6 @@ table {
 .table {
   display: inline-block;
   border: 1px solid #eee;
-  width: 6em;
   float: left;
 }
 
@@ -62,6 +65,7 @@ table {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .numberCol {
@@ -69,11 +73,14 @@ table {
   text-align: center;
 }
 
+.playerList {
+  width: 16em;
+}
+
 .Header {
   display: flex;
   justify-content: center;
-  background: #0d686e;
-  background: linear-gradient(172deg, #0d686e 12%, #0a6374 89%);
+  background: linear-gradient(172deg, #333, #444);
 }
 .Header h1 {
   color: #dde;
@@ -82,12 +89,15 @@ table {
 .formElements {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 2em;
 }
 
 .errorMessage {
   height: 1em;
   padding: 0;
-  margin-top: 0;
+  margin-top: 0.25em;
   margin-bottom: 0;
   color: red;
 }
@@ -97,11 +107,28 @@ table {
   flex-direction: column;
 }
 
+@media (min-width: 381px) {
+  .buttons {
+    align-content: flex-start;
+    width: 33%;
+  }
+}
+
+.teamReset {
+  display: flex;
+  justify-content: center;
+}
+
 button {
   width: 8em;
   minimum-height: 8em;
   border: 1px solid #ccc;
   background: linear-gradient(172deg, #eee, #ccc);
+}
+@media (max-width: 380px) {
+  button {
+    width: 16em;
+  }
 }
 
 input, button, label, p {
@@ -112,6 +139,17 @@ input {
   width: 16em;
   height: 2em;
   border: 2px solid #777;
+  margin-bottom: 0;
+}
+
+label {
+  text-align: left;
+  margin-bottom: 0;
+}
+@media (max-width: 380px) {
+  label {
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

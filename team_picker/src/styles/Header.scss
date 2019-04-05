@@ -1,8 +1,7 @@
 .Header {
 	display: flex;
 	justify-content: center;
-	background: rgb(13,104,110);
-	background: linear-gradient(172deg, rgba(13,104,110,1) 12%, rgba(10,99,116,1) 89%);
+	background: $headerFooterBG;
 
 	h1 {
 		color: #dde;

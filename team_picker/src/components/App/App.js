@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from '../Header';
 import PlayerEntry from '../PlayerEntry/';
 import TeamDisplay from '../TeamDisplay/';
+
 import ResetButton from '../Button/ResetButton';
 
 
@@ -16,9 +17,6 @@ class App extends Component {
 	        	<PlayerEntry /> :
 	        	<TeamDisplay /> 
 	        }
-	        <div className="container">
-	        	<ResetButton />
-    		</div>
 	    </div>
     );
   }

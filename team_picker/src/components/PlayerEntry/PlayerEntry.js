@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
-import '../../styles/style.css';
+import ResetButton from '../Button/ResetButton';
+
+// import '../../styles/style.css';
 
 class PlayerEntry extends Component {
 
@@ -50,32 +52,29 @@ class PlayerEntry extends Component {
 
 	render() {
 
-
-			
-			
     return (
 	    <div className="PlayerEntry container">
 	    	<form className="form" onSubmit={ this.handleSubmit }>
-	    		<label htmlFor="playerName">Enter { this.props.totalPlayers } player names.</label>
 	    		<div className="formElements">
-	    			
 	    			<div className="playerInput">
+	    				<label className="inputLabel" htmlFor="playerName">Enter { this.props.totalPlayers } player names.</label>
 		    			<input 
-		    			onChange={ this.handleChange }
-		    			value={ this.state.input }
-		    			id="playerName" 
-		    			type="text" 
-		    			name="PlayerName" 
+			    			onChange={ this.handleChange }
+			    			value={ this.state.input }
+			    			id="playerName" 
+			    			type="text" 
+			    			name="PlayerName" 
 		    			/>
+		    			<p className="errorMessage">{ this.state.errorMessage }</p>
 	    			</div>
-	    			<div className="buttons">
+    				<div className="buttons">
 			    		<button
 			    			onClick={ this.handleClick }>Add Player</button>
 			    		<button className="button" type='submit'>Submit players</button>
+	        		<ResetButton />
 	    			</div>	
-
-		    		</div>
-		    		<p className="errorMessage">{ this.state.errorMessage }</p>
+	    		</div>
+	    		
 	    		</form>
 	    	<div className="tableContainer">
 		    	<table className="playerList table">

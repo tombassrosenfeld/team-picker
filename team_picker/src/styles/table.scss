@@ -7,7 +7,7 @@ table {
 .table {
 	display: inline-block;
 	border: 1px solid #eee;
-	width: 6em;
+	
 	float: left;
 	
 }
@@ -16,10 +16,15 @@ table {
 	display: flex;
 	justify-content: space-around;
 	flex-direction: row;
+	flex-wrap: wrap;
 }
 
 .numberCol {
 	min-width: 1.5em;
 	text-align: center;
+}
+
+.playerList {
+	width: 16em;
 }
 

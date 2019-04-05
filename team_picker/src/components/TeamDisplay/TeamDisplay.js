@@ -1,6 +1,6 @@
 import React, { Component, } from 'react';
-
-import '../../styles/style.css';
+import ResetButton from '../Button/ResetButton';
+// import '../../styles/style.css';
 
 class TeamDisplay extends Component {
 
@@ -36,6 +36,10 @@ class TeamDisplay extends Component {
 		    				</div>
 		    			))
 		    		}
+
+		    	</div>
+		    	<div className="teamReset">
+		    		<ResetButton />
 		    	</div>
 		    </div>
 	    );

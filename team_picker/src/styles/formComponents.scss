@@ -1,13 +1,15 @@
 .formElements {
 	display: flex;
 	flex-direction: row;
-	
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin-bottom: 2em;
 }
 
 .errorMessage {
 	height: 1em;
 	padding: 0;
-	margin-top: 0;
+	margin-top: .25em;
 	margin-bottom: 0;
 	color: red;
 }
@@ -17,23 +19,53 @@
 	flex-direction: column;
 }
 
+.buttons {
+	
+	
+
+	@media (min-width: 381px) {
+		align-content: flex-start;
+		width: 33%;
+	}
+}
+
+.teamReset {
+	display: flex;
+	justify-content: center;
+}
+
 button {
 	width: 8em;
 	minimum-height: 8em;
 	border: 1px solid #ccc;
-
 	background: linear-gradient(172deg, #eee, #ccc);
+
+	@media (max-width: 380px) {
+		width: 16em;
+	}
 }
 
 input, button, label, p {
 	margin: 1em;
 
-	
 }
 
 input {
 	width: 16em;
 	height: 2em;
 	border: 2px solid #777;
+	margin-bottom: 0;
 }
+
+label {
+	text-align: left;
+	margin-bottom: 0;
+	@media (max-width: 380px) {
+		text-align: center;
+	}
+}
+
+
+
+
 
