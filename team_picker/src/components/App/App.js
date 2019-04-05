@@ -5,6 +5,7 @@ import {
   Switch,
 } from "react-router-dom";
 
+
 import Header from '../Header';
 import PlayerEntry from '../PlayerEntry/';
 import TeamDisplay from '../TeamDisplay/';
@@ -18,6 +19,7 @@ import '../../styles/style.css';
 
 class App extends Component {
   render() {
+
     return (
     	<Router>
 	    	<div className="app">

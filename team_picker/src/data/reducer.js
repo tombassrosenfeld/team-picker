@@ -34,9 +34,15 @@ let playerShuffle = (state) => {
 let createTeams = (state) => {
 	
 	for (let i = 0; i < state.numberOfTeams; i += 1) {
-		let team = state.players.filter((player, index) => (index % state.numberOfTeams === i ));	
-		state.teams.push(team);
+		let team = state.players.filter((player, index) => (index % state.numberOfTeams === i ));
+		let teamObj = {
+			teamName: `Team ${ i }`, 
+			players: team,
+			points: 0,
+		}
+		state.teams.push(teamObj);
 	};
+	console.log(state.teams);
 	return state;
 };
 
@@ -48,7 +54,6 @@ let changeSettings = (state, { numberOfTeams, teamSize }) => {
 		teamSize,
 		totalPlayers: numberOfTeams * teamSize,
 	}
-
 }
 
 let reset = (state) => {

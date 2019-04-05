@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
@@ -12,6 +12,7 @@ class WelcomeScreen extends Component {
 		this.state = ({
 			numberOfTeams: 2,
 			teamSize: 5,
+			errorMessage: '',
 		})
 
 		this.handleChange = this.handleChange.bind(this);
@@ -23,6 +24,7 @@ class WelcomeScreen extends Component {
 	handleChange(e) {
 		this.setState({ [e.target.name]: e.target.value });
 		console.log(this.state);
+
 	}
 
 	handleClick(e) {
@@ -49,6 +51,7 @@ class WelcomeScreen extends Component {
 		    			type="number" 
 		    			name="teamSize" 
 	    			/>
+	    			<p className="errorMessage">{ this.state.errorMessage }</p>
 		    	</div>
 		    	<div className="buttons">
 		    		<Link 
