@@ -49,8 +49,10 @@ class WelcomeScreen extends Component {
 		    			name="teamSize" 
 	    			/>
 		    	</div>
-		    	<button
+		    	<div className="buttons">
+		    		<button	
 	    				onClick={ this.handleClick }>Generate teams</button>
+		    	</div>
 		    </div>
 	    );
 	}
