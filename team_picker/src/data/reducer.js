@@ -10,7 +10,6 @@ let shuffle = (array) => {
     array[i] = array[j]
     array[j] = temp
   }
-  console.log(array);
   return array;
 };
 
@@ -19,8 +18,6 @@ let submitPlayers = (state, { players }) => {
 			...state,
 			players,
 			teams: [],
-			playersSubmitted: true,
-
 		});
 };
 
@@ -47,7 +44,6 @@ let createTeams = (state) => {
 };
 
 let changeSettings = (state, { numberOfTeams, teamSize }) => {
-	console.log(numberOfTeams);
 	return {
 		...state,
 		numberOfTeams,

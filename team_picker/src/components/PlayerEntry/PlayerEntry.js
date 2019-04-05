@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import ResetButton from '../Button/ResetButton';
 
@@ -41,7 +42,7 @@ class PlayerEntry extends Component {
 
 	handleSubmit(e) {
 		
-		e.preventDefault();
+		
 		this.state.players.length === this.props.totalPlayers ? this.props.savePlayers(this.state) : this.setState({ errorMessage: `You need to add ${ this.props.totalPlayers - this.state.players.length } more player${ this.props.totalPlayers - this.state.players.length !== 1 ? "s" : "" }.`});
 	}
 
@@ -67,7 +68,11 @@ class PlayerEntry extends Component {
     				<div className="buttons">
 			    		<button
 			    			onClick={ this.handleClick }>Add Player</button>
-			    		<button className="button" type='submit'>Submit players</button>
+			    		<Link
+			    			className="button" 
+			    			to="/display-teams"
+			    			onClick={ this.handleSubmit }
+			    		>Submit players</Link>
 	        		<ResetButton />
 	    			</div>	
 	    		</div>
