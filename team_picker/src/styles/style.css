@@ -10,6 +10,10 @@ h1 {
   }
 }
 
+h2 {
+  font-size: 1.5em;
+}
+
 th {
   font-size: 1.5em;
   text-align: center;
@@ -21,6 +25,10 @@ td {
 
 label, p, button, li, input {
   font-size: 1em;
+}
+
+input, button, label, p, h2 {
+  margin: 1em;
 }
 
 body {
@@ -86,7 +94,7 @@ table {
   color: #dde;
 }
 
-.formElements {
+.formElements, .settings {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -94,15 +102,7 @@ table {
   margin-bottom: 2em;
 }
 
-.errorMessage {
-  height: 1em;
-  padding: 0;
-  margin-top: 0.25em;
-  margin-bottom: 0;
-  color: red;
-}
-
-.buttons, .playerInput {
+.buttons, .playerInput, .settingsElements {
   display: flex;
   flex-direction: column;
 }
@@ -114,6 +114,14 @@ table {
   }
 }
 
+.errorMessage {
+  height: 1em;
+  padding: 0;
+  margin-top: 0.25em;
+  margin-bottom: 0;
+  color: red;
+}
+
 .teamReset {
   display: flex;
   justify-content: center;
@@ -121,7 +129,7 @@ table {
 
 button {
   width: 8em;
-  minimum-height: 8em;
+  maximum-height: 8em;
   border: 1px solid #ccc;
   background: linear-gradient(172deg, #eee, #ccc);
 }
@@ -131,15 +139,11 @@ button {
   }
 }
 
-input, button, label, p {
-  margin: 1em;
-}
-
 input {
   width: 16em;
   height: 2em;
   border: 2px solid #777;
-  margin-bottom: 0;
+  margin: 0.5em 1em;
 }
 
 label {
