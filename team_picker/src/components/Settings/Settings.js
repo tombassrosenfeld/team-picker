@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+
 
 
 
@@ -24,13 +26,12 @@ class WelcomeScreen extends Component {
 	}
 
 	handleClick(e) {
-		e.preventDefault();
 		this.props.saveSettings(this.state);
 	}
 
 	render() {
 	    return (
-		    <div className="settings">
+		    <form className="settings">
 		    	<div className="settingsElements">
 		    		<label htmlFor="numberOfTeams">Number of teams</label>
 			    	<input 
@@ -50,10 +51,14 @@ class WelcomeScreen extends Component {
 	    			/>
 		    	</div>
 		    	<div className="buttons">
-		    		<button	
-	    				onClick={ this.handleClick }>Generate teams</button>
+		    		<Link 
+		    			className="link"
+		    			onClick={ this.handleClick }
+		    			to="/enter-players"	
+	    			>Lets go!
+	    			</Link>
 		    	</div>
-		    </div>
+		    </form>
 	    );
 	}
 }

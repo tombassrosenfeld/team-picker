@@ -3,7 +3,8 @@ import Button from './Button';
 import { reset } from '../../data/actions';
 
 const mapStateToProps = () => ({
-	label: 'Reset',
+	label: 'Start again',
+	link: '/',
 });
 
 const mapDispatchToProps = dispatch => {
