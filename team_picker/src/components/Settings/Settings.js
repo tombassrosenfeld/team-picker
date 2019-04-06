@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 
-class WelcomeScreen extends Component {
+class Settings extends Component {
 
 	constructor(props){
 		super(props)
@@ -56,12 +56,11 @@ class WelcomeScreen extends Component {
 		    			className="link"
 		    			onClick={ this.handleClick }
 		    			to="/enter-players"	
-	    			>Lets go!
-	    			</Link>
+	    			>Lets go!</Link>
 		    	</div>
 		    </form>
 	    );
 	}
 }
 
-export default WelcomeScreen;
+export default Settings;

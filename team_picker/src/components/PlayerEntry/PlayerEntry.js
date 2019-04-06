@@ -10,7 +10,7 @@ class PlayerEntry extends Component {
 	constructor(props){
 		super(props)
 
-		this.state =({
+		this.state = ({
 			input: "",
 			players: [],
 			errorMessage: "",
@@ -50,52 +50,52 @@ class PlayerEntry extends Component {
 
 	render() {
 
-    return (
-	    <div className="PlayerEntry container">
-	    	<form className="form" onSubmit={ this.handleSubmit }>
-	    		<div className="formElements">
-	    			<div className="playerInput">
-	    				<label className="inputLabel" htmlFor="playerName">Enter { this.props.totalPlayers } player names.</label>
-		    			<input 
-			    			onChange={ this.handleChange }
-			    			value={ this.state.input }
-			    			id="playerName" 
-			    			type="text" 
-			    			name="PlayerName" 
-		    			/>
-		    			<p className="errorMessage">{ this.state.errorMessage }</p>
-	    			</div>
-    				<div className="buttons">
-			    		<button
-			    			onClick={ this.handleClick }>Add Player</button>
-			    		<Link
-			    			className="button" 
-			    			to="/display-teams"
-			    			onClick={ this.handleSubmit }
-			    		>Submit players</Link>
-	        		<ResetButton />
-	    			</div>	
-	    		</div>
-	    	</form>
-	    	{
-	    		!this.state.players ? null : 
-	    		<div className="tableContainer">
-			    	<table className="playerList table">
-			    		<tbody>
-					    	{
-					    		this.state.players.map(( item, i ) => (
-						    		<tr key={ i }>
-						    			<td className="numberCol">{ i + 1 }</td> 
-						    			<td>{ item }</td>
-						    		</tr>
-						    	))
-					    	}
-				    	</tbody>
-				    </table>
-	    		</div>
-	    	}
-	    </div>
-	  );
+		return (
+			<div className="PlayerEntry container">
+				<form className="form" onSubmit={ this.handleSubmit }>
+					<div className="formElements">
+						<div className="playerInput">
+							<label className="inputLabel" htmlFor="playerName">Enter { this.props.totalPlayers } player names.</label>
+							<input 
+								onChange={ this.handleChange }
+								value={ this.state.input }
+								id="playerName" 
+								type="text" 
+								name="PlayerName" 
+							/>
+							<p className="errorMessage">{ this.state.errorMessage }</p>
+						</div>
+						<div className="buttons">
+							<button
+								onClick={ this.handleClick }>Add Player</button>
+							<Link
+								to={ this.state.players.length === this.props.totalPlayers ? "/display-teams" : "/enter-players" } 
+								className="button"
+								onClick={ this.handleSubmit }
+							>Submit players</Link>
+							<ResetButton />
+						</div>  
+					</div>
+				</form>
+				{
+					!this.state.players ? null : 
+					<div className="tableContainer">
+						<table className="playerList table">
+							<tbody>
+								{
+									this.state.players.map(( item, i ) => (
+										<tr key={ i }>
+											<td className="numberCol">{ i + 1 }</td> 
+											<td>{ item }</td>
+										</tr>
+									))
+								}
+							</tbody>
+						</table>
+					</div>
+				}
+			</div>
+		);
 	}
 }
 

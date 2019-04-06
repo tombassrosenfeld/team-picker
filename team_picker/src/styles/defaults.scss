@@ -5,7 +5,7 @@ body {
 	margin: 0;
 	
 
-	@media (max-width: 635px) {
+	@media (max-width: $mobileMaxWidth) {
 		font-size: 80%;
 	}
 }

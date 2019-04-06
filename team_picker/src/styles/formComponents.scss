@@ -19,12 +19,6 @@
 
 .buttons {
 	
-	
-
-	@media (min-width: 381px) {
-		align-content: flex-start;
-		width: 33%;
-	}
 }
 
 .errorMessage {
@@ -35,18 +29,19 @@
 	color: red;
 }
 
-.teamReset {
-	display: flex;
-	justify-content: center;
+.teamDisplay .buttons {
+	@media (min-width: $medSizeMinWidth) {
+		align-content: center;
+		width: 33%;
+	}
 }
 
 button, a {
 	width: 8em;
-	maximum-height: 8em;
 	border: 1px solid #ccc;
 	background: linear-gradient(172deg, #eee, #ccc);
 
-	@media (max-width: 380px) {
+	@media (max-width: $mobileMaxWidth) {
 		width: 16em;
 	}
 }
@@ -61,8 +56,16 @@ input {
 label {
 	text-align: left;
 	margin-bottom: 0;
-	@media (max-width: 380px) {
+	@media (max-width: $mobileMaxWidth) {
 		text-align: center;
+	}
+}
+
+a, button {
+	
+	width: 8em;
+	@media (max-width: $mobileMaxWidth) {
+		width: 16em;
 	}
 }
 

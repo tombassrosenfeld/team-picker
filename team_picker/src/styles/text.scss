@@ -13,7 +13,8 @@ h1 {
 	font-size: 2.5em;
 	text-align: center;
 
-	@media (max-width: 380px){
+
+	@media (max-width: $mobileMaxWidth ){
 		font-size: 2em;
 	}
 
@@ -21,15 +22,17 @@ h1 {
 
 h2 {
 	font-size: 1.5em;
+
 }
 
-th {
+thead tr {
 	font-size: 1.5em;
 	text-align: center;
 }
 
-td {
-	font-size: 1.5em;
+tbody tr {
+	font-size: 1.2em;
+	text-align: left;
 }
 
 
@@ -41,12 +44,17 @@ input, button, label, p, h2, a {
 	margin: 1em;
 }
 
-a {
+a, button {
 	text-decoration: none;
 	text-align: center;
 	box-sizing: border-box;
 	padding: 0.16em 0;
 	min-height: 20px
+}
+
+form p {
+	margin: 0;
+	text-align: center;
 }
 
 

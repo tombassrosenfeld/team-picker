@@ -29,26 +29,50 @@ let playerShuffle = (state) => {
 }
 
 let createTeams = (state) => {
-	
+	let newTeams = [];
 	for (let i = 0; i < state.numberOfTeams; i += 1) {
 		let team = state.players.filter((player, index) => (index % state.numberOfTeams === i ));
 		let teamObj = {
-			teamName: `Team ${ i }`, 
+			teamName: `Team ${ i + 1 }`, 
 			players: team,
 			points: 0,
 		}
-		state.teams.push(teamObj);
+		newTeams.push(teamObj);
 	};
-	console.log(state.teams);
-	return state;
+	return ({
+		...state,
+		teams: newTeams,
+	})
 };
 
-let changeSettings = (state, { numberOfTeams, teamSize }) => {
+let createOpponents = ({ teams }) => {
+	let opponents = [];
+	for (let i = 0; i < teams.length - 1; i += 1) {
+		opponents.push(teams.filter((teamB, j) => j > i ));
+	};
+
+	return opponents;
+};
+
+let createFixtures = (state, opponents) => {
+	let fixtures = [];
+	for (let i = 0; i < state.teams.length - 1; i += 1){
+		let games = (opponents[i].map((opponent, j) => `${ state.teams[i].teamName } vs ${ opponent.teamName }`));
+		fixtures = [...fixtures, ...games];
+	}
+	return {
+		...state,
+		fixtures,
+	}
+}
+
+let changeSettings = (state, { numberOfTeams, teamSize, homeAway }) => {
 	return {
 		...state,
 		numberOfTeams,
 		teamSize,
 		totalPlayers: numberOfTeams * teamSize,
+		homeAway,
 	}
 }
 
@@ -59,7 +83,25 @@ let reset = (state) => {
 	}
 }
 
+let win = (state, { id }) => {
+	let teams = state.teams; 
+	console.log(teams);
+	state.teams[id].points = state.teams[id].points += 2;
+	return{
+		...state,
+		teams,
+	}
+}
 
+let draw = (state, { id }) => {
+	let teams = state.teams; 
+	console.log(teams);
+	state.teams[id].points = state.teams[id].points += 1;
+	return{
+		...state,
+		teams,
+	}
+}
 
 
 
@@ -68,7 +110,10 @@ const reducer = (state, action) => {
 		case 'submitPlayers': return createTeams(playerShuffle(submitPlayers(state, action)));
 		case 'reset': return reset(state);
 		case 'settings': return changeSettings(state, action);
-
+		case 'shuffle': return createTeams(playerShuffle(state));
+		case 'createLeague': return createFixtures(state, createOpponents(state));
+		case 'teamWin': return win(state, action);
+		case 'teamDraw': return draw(state, action);
 		default: return state;
 	}
 };
