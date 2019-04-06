@@ -11,6 +11,7 @@ import PlayerEntry from '../PlayerEntry/';
 import TeamDisplay from '../TeamDisplay/';
 import WelcomeScreen from '../WelcomeScreen';
 import FourOhFour from '../FourOhFour';
+import LeagueSetup from '../LeagueSetup';
 
 
 
@@ -28,6 +29,7 @@ class App extends Component {
 					<Route exact path="/" component={ WelcomeScreen } />
 					<Route exact path="/enter-players" component={ PlayerEntry } />
 					<Route exact path="/display-teams" component={ TeamDisplay } />
+					<Route exact path="/set-up-league" component={ LeagueSetup } />
 					<Route component={ FourOhFour } />
 				  </Switch>
 					{/*<Footer />*/}

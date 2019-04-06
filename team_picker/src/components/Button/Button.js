@@ -22,9 +22,10 @@ class Button extends Component {
 	render() {
 	    return (
 		    <Link 
-		    	className="button" 
 		    	to={ this.props.link } 
-		    	onClick={ this.handleClick }>{ this.props.label }</Link>
+		    	className="button" 
+		    	onClick={ this.handleClick }
+		    >{ this.props.label }</Link>
 	    );
 	}
 }

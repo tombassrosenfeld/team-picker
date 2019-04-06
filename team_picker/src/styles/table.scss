@@ -1,14 +1,20 @@
 table {
 
-	margin: 0;
+	margin: .5em;
 	padding: 1em;
+	text-align: center;
 }
 
 .table {
 	display: inline-block;
+	display: flex;
+	flex-direction: column;
 	border: 1px solid #eee;
-	
+	width: 8em;
 	float: left;
+	justify-content: center;
+	align-items: center;
+	margin: 0.5em;
 	
 }
 
@@ -17,6 +23,7 @@ table {
 	justify-content: space-around;
 	flex-direction: row;
 	flex-wrap: wrap;
+	margin: 1em;
 }
 
 .numberCol {

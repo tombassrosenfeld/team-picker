@@ -1,10 +1,23 @@
 import React, { Component, } from 'react';
 import ResetButton from '../Button/ResetButton';
-// import '../../styles/style.css';
+import ShuffleButton from '../Button/ShuffleButton';
+import { Link } from 'react-router-dom';
+
 
 class TeamDisplay extends Component {
 
-	
+	constructor(props) {
+		super(props)
+
+	this.handleClick = this.handleClick.bind(this);
+	}
+
+
+
+
+	handleClick(e) {
+		this.props.startLeague();
+	}
 
 	render() {
 		return (
@@ -17,14 +30,13 @@ class TeamDisplay extends Component {
 								<table  className="table">
 									<thead>
 											<tr key={ i }>
-													<th colSpan="2">Team { i + 1 }</th>
+													<th>Team { i + 1 }</th>
 											</tr>
 									</thead>
 									<tbody>
 										{
 											players.map((player, j) => (
 												<tr key={ j }>
-													<td className="numberCol" >{ j + 1 }</td>
 													<td>{ player }</td>
 												</tr>
 											))
@@ -35,8 +47,12 @@ class TeamDisplay extends Component {
 						))
 					}
 				</div>
-				<div className="teamReset">
+				<div className="formElements">
+					<div className="buttons teamReset">
+					<ShuffleButton />
 					<ResetButton />
+					<Link onClick={ this.handleClick } to="#">Start League</Link>
+				</div>
 				</div>
 			</div>
 		);

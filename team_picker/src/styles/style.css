@@ -4,7 +4,7 @@ h1 {
   font-size: 2.5em;
   text-align: center;
 }
-@media (max-width: 380px) {
+@media (max-width: 550px) {
   h1 {
     font-size: 2em;
   }
@@ -14,13 +14,14 @@ h2 {
   font-size: 1.5em;
 }
 
-th {
+thead tr {
   font-size: 1.5em;
   text-align: center;
 }
 
-td {
-  font-size: 1.5em;
+tbody tr {
+  font-size: 1.2em;
+  text-align: left;
 }
 
 label, p, button, li, input, a {
@@ -31,7 +32,7 @@ input, button, label, p, h2, a {
   margin: 1em;
 }
 
-a {
+a, button {
   text-decoration: none;
   text-align: center;
   box-sizing: border-box;
@@ -39,11 +40,16 @@ a {
   min-height: 20px;
 }
 
+form p {
+  margin: 0;
+  text-align: center;
+}
+
 body {
   font-size: 100%;
   margin: 0;
 }
-@media (max-width: 635px) {
+@media (max-width: 550px) {
   body {
     font-size: 80%;
   }
@@ -67,14 +73,21 @@ body {
 }
 
 table {
-  margin: 0;
+  margin: 0.5em;
   padding: 1em;
+  text-align: center;
 }
 
 .table {
   display: inline-block;
+  display: flex;
+  flex-direction: column;
   border: 1px solid #eee;
+  width: 8em;
   float: left;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em;
 }
 
 .tableContainer {
@@ -82,6 +95,7 @@ table {
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: 1em;
 }
 
 .numberCol {
@@ -115,13 +129,6 @@ table {
   flex-direction: column;
 }
 
-@media (min-width: 381px) {
-  .buttons {
-    align-content: flex-start;
-    width: 33%;
-  }
-}
-
 .errorMessage {
   height: 1em;
   padding: 0;
@@ -130,18 +137,19 @@ table {
   color: red;
 }
 
-.teamReset {
-  display: flex;
-  justify-content: center;
+@media (min-width: 551px) {
+  .teamDisplay .buttons {
+    align-content: center;
+    width: 33%;
+  }
 }
 
 button, a {
   width: 8em;
-  maximum-height: 8em;
   border: 1px solid #ccc;
   background: linear-gradient(172deg, #eee, #ccc);
 }
-@media (max-width: 380px) {
+@media (max-width: 550px) {
   button, a {
     width: 16em;
   }
@@ -158,9 +166,18 @@ label {
   text-align: left;
   margin-bottom: 0;
 }
-@media (max-width: 380px) {
+@media (max-width: 550px) {
   label {
     text-align: center;
+  }
+}
+
+a, button {
+  width: 8em;
+}
+@media (max-width: 550px) {
+  a, button {
+    width: 16em;
   }
 }
 
