@@ -4,8 +4,22 @@ let numberOfTeams = 3;
 let teams = ['0', '1', '2', '3', '4', '5', '6', '7'];
 
 
+//attempt using the team objects to extract the name. 
+let createFixtures = (state/*, opponents*/) => {
 
 
+	let fixtures = [];
+	for (let i = 0; i < state.teams.length - 1; i += 1){
+		let games = state.teams.reduce((array, team, j) => j > i ? `${ state.teams[i].teamName } vs ${ team.teamName }` : null, []);
+		fixtures = [...fixtures, ...games];
+	}
+	
+	console.log(fixtures);
+	return {
+		...state,
+		fixtures,
+	}
+}
 
 // .map(teamB => `Team ${ i + 1 } vs Team${ j + 1 }`)
 

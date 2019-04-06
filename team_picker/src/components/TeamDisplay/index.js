@@ -9,6 +9,7 @@ const mapStateToProps = ({ teams }) => ({
 });
 
 const mapDispatchToProps = dispatch => {
+	
 	return {
 		startLeague: () => {
 			dispatch(createLeague())

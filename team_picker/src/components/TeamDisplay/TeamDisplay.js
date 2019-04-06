@@ -29,15 +29,15 @@ class TeamDisplay extends Component {
 							<div>
 								<table  className="table">
 									<thead>
-											<tr key={ i }>
-													<th>Team { i + 1 }</th>
+											<tr>
+													<th key={ i }>Team { i + 1 }</th>
 											</tr>
 									</thead>
 									<tbody>
 										{
 											players.map((player, j) => (
-												<tr key={ j }>
-													<td>{ player }</td>
+												<tr >
+													<td key={ j }>{ player }</td>
 												</tr>
 											))
 										}
@@ -51,7 +51,7 @@ class TeamDisplay extends Component {
 					<div className="buttons teamReset">
 					<ShuffleButton />
 					<ResetButton />
-					<Link onClick={ this.handleClick } to="#">Start League</Link>
+					<Link onClick={ this.handleClick } to="/league-dashboard">Start League</Link>
 				</div>
 				</div>
 			</div>

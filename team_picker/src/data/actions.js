@@ -25,6 +25,10 @@ export const submitSettings = ({ numberOfTeams, teamSize, homeAway }) => {
 	}
 }
 
+
+export const updateTeamWin = ({ id }) => ({ type: 'teamWin', id, });
+export const updateTeamDraw = ({ id }) => ({ type: 'teamDraw', id, });
+
 export const createLeague = () => ({ type: 'createLeague', });
 
 export const reset = () =>  ({ type: 'reset', });

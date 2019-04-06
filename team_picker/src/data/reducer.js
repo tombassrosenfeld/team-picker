@@ -55,24 +55,16 @@ let createOpponents = ({ teams }) => {
 };
 
 let createFixtures = (state, opponents) => {
-
-		console.log(opponents);
 	let fixtures = [];
 	for (let i = 0; i < state.teams.length - 1; i += 1){
-		let games = (opponents[i].map((opponent, j) => `Team ${ i + 1 } vs ${ opponent.teamName }`));
+		let games = (opponents[i].map((opponent, j) => `${ state.teams[i].teamName } vs ${ opponent.teamName }`));
 		fixtures = [...fixtures, ...games];
 	}
-	console.log(fixtures);
 	return {
 		...state,
 		fixtures,
 	}
 }
-
-let createLeague = (state) => {
-	createFixtures(state, createOpponents(state))
-}
-
 
 let changeSettings = (state, { numberOfTeams, teamSize, homeAway }) => {
 	return {
@@ -91,7 +83,25 @@ let reset = (state) => {
 	}
 }
 
+let win = (state, { id }) => {
+	let teams = state.teams; 
+	console.log(teams);
+	state.teams[id].points = state.teams[id].points += 2;
+	return{
+		...state,
+		teams,
+	}
+}
 
+let draw = (state, { id }) => {
+	let teams = state.teams; 
+	console.log(teams);
+	state.teams[id].points = state.teams[id].points += 1;
+	return{
+		...state,
+		teams,
+	}
+}
 
 
 
@@ -101,7 +111,9 @@ const reducer = (state, action) => {
 		case 'reset': return reset(state);
 		case 'settings': return changeSettings(state, action);
 		case 'shuffle': return createTeams(playerShuffle(state));
-		case 'createLeague': return createLeague(state, action);
+		case 'createLeague': return createFixtures(state, createOpponents(state));
+		case 'teamWin': return win(state, action);
+		case 'teamDraw': return draw(state, action);
 		default: return state;
 	}
 };
