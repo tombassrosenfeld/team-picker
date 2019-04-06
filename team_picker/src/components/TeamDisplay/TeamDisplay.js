@@ -26,18 +26,18 @@ class TeamDisplay extends Component {
 				<div className="tableContainer">  
 					{
 						this.props.teams.map(({ players }, i) => (
-							<div>
+							<div key={ i }>
 								<table  className="table">
 									<thead>
 											<tr>
-													<th key={ i }>Team { i + 1 }</th>
+													<th>Team { i + 1 }</th>
 											</tr>
 									</thead>
 									<tbody>
 										{
 											players.map((player, j) => (
-												<tr >
-													<td key={ j }>{ player }</td>
+												<tr key={ j }>
+													<td>{ player }</td>
 												</tr>
 											))
 										}
