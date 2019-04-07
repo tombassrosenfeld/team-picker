@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import TeamElement from './TeamElement';
+import TeamScoreElement from './TeamScoreElement';
 import { updateTeamWin, updateTeamDraw } from '../../data/actions';
 
 const mapStateToProps = ({ teams }) => ({
@@ -19,4 +19,4 @@ const mapDispatchToProps = dispatch => {
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TeamElement);
+export default connect(mapStateToProps, mapDispatchToProps)(TeamScoreElement);

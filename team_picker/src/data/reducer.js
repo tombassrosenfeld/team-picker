@@ -85,7 +85,6 @@ let reset = (state) => {
 
 let win = (state, { id }) => {
 	let teams = state.teams; 
-	console.log(teams);
 	state.teams[id].points = state.teams[id].points += 2;
 	return{
 		...state,
@@ -95,15 +94,44 @@ let win = (state, { id }) => {
 
 let draw = (state, { id }) => {
 	let teams = state.teams; 
-	console.log(teams);
+
 	state.teams[id].points = state.teams[id].points += 1;
+
 	return{
 		...state,
 		teams,
 	}
 }
 
+let sortLeaguetable = (state) => {
+	let teams = state.teams;
+	let leaguetable = teams.sort(compare('points', 'desc'));
+	console.log(leaguetable);
+	return{
+		...state,
+		leaguetable,
+	}
 
+}
+
+let compare = (key, order = 'asc') => {
+	return function(a,b) {
+		const varA = a[key];
+		const varB = b[key];
+		console.log(a[key])
+		let comparison = 0;
+
+		if (varA > varB) {
+			comparison = 1;
+		
+		} else if (varA < varB) {
+			comparison = -1;
+		}
+		return (
+			(order == 'desc') ? (comparison * -1) : comparison
+		);
+	}
+};
 
 const reducer = (state, action) => {
 	switch (action.type) {
@@ -112,8 +140,8 @@ const reducer = (state, action) => {
 		case 'settings': return changeSettings(state, action);
 		case 'shuffle': return createTeams(playerShuffle(state));
 		case 'createLeague': return createFixtures(state, createOpponents(state));
-		case 'teamWin': return win(state, action);
-		case 'teamDraw': return draw(state, action);
+		case 'teamWin': return sortLeaguetable(win(state, action));
+		case 'teamDraw': return sortLeaguetable(draw(state, action));
 		default: return state;
 	}
 };

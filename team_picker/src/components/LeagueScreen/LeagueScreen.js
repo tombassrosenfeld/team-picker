@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import TeamElement from '../TeamElement';
+import TeamScoreElement from '../TeamScoreElement';
+import Leaguetable from '../Leaguetable/';
 
 class LeagueScreen extends Component {
 
@@ -25,13 +26,16 @@ class LeagueScreen extends Component {
 				<div>
 						{
 							this.props.teams.map((team, j) =>(
-								<TeamElement
+								<TeamScoreElement
 									key={ j }
 									team={ team }
 									id={ j }
 								/>
 							))
 						}
+				</div>
+				<div>
+					<Leaguetable />
 				</div>
 
 

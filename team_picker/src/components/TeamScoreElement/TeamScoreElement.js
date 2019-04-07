@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class TeamElement extends Component {
+class TeamScoreElement extends Component {
 
 	constructor(props){
 		super(props)
@@ -34,7 +34,7 @@ class TeamElement extends Component {
 	render() {
 
 	    return (
-		    <div className="TeamElement">
+		    <div className="teamScoreElement">
 		    	<h2>{ this.props.team.teamName }</h2>
 		    	<h2>{ this.props.team.points }</h2>
 
@@ -50,4 +50,4 @@ class TeamElement extends Component {
 	}
 }
 
-export default TeamElement;
+export default TeamScoreElement;
