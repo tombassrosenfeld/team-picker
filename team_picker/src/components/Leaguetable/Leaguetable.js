@@ -5,23 +5,32 @@ class Leaguetable extends Component {
 	constructor(props){
 		super(props)
 
+		this.state = {
+
+		}
 	}
 
 	render() {
 			
 		return (
-			<div className="leaguetable">
 				<table>
-					{
-						this.props.leaguetable.map((team, i) => (
-							<tr key={ i }>
-								<td>{ team.teamName }</td>
-								<td>{ team.points }</td>
-							</tr>
-						))
-					}  
+					<thead>
+						<tr>
+							<td>Team</td>
+							<td>Points</td>
+						</tr>
+					</thead>
+					<tbody>
+						{
+							this.props.leaguetable.map((team, i) => (
+								<tr key={ i }>
+									<td>{ team.teamName }</td>
+									<td className="numberCol">{ team.points }</td>
+								</tr>
+							))
+						}  
+					</tbody>
 				</table> 
-			</div>
 		);
 	}
 }
