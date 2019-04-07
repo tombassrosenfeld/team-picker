@@ -1,10 +1,15 @@
 import React from 'react';
-import Settings from './Settings';
-import { Fragment } from 'react';
+import Settings from '../Settings';
+import { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-const WelcomeScreen = () => (
-		<Fragment>
+
+class WelcomeScreen extends Component {
+
+	
+	render() {
+	    return (
+		    <Fragment>
 			<div
 				className="welcomescreen container"
 			>
@@ -16,15 +21,17 @@ const WelcomeScreen = () => (
 				<Settings />
 			</div>
 			<div className="formElements">
-				<h2>Or log in to see your league or get started with a new one.</h2>
+				<h2>Or go to your league dashboard:</h2>
 				<div className="buttons">
 					<Link 
-						to="/set-up-league"
+						to={ this.props.teams? "/league-dashboard" : "#0"}
 						className="link button"
-					>Log In</Link>
+					>My League</Link>
 				</div>
 			</div>
 		</Fragment>
-	);
+	    );
+	}
+}
 
 export default WelcomeScreen;

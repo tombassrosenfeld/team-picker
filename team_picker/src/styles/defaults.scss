@@ -5,7 +5,7 @@ body {
 	margin: 0;
 	
 
-	@media (max-width: $mobileMaxWidth) {
+	@media (max-width: $textBreakPoint) {
 		font-size: 80%;
 	}
 }
