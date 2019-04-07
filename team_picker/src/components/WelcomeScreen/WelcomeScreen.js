@@ -8,6 +8,7 @@ class WelcomeScreen extends Component {
 
 	
 	render() {
+			console.log(this.props.teams.length);
 	    return (
 		    <Fragment>
 			<div
@@ -24,7 +25,7 @@ class WelcomeScreen extends Component {
 				<h2>Or go to your league dashboard:</h2>
 				<div className="buttons">
 					<Link 
-						to={ this.props.teams? "/league-dashboard" : "#0"}
+						to={ this.props.teams.length > 0 ? "/league-dashboard" : "#0" }
 						className="link button"
 					>My League</Link>
 				</div>
