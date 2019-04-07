@@ -8,8 +8,13 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	align-items: center;
 	justify-content: space-around;
 	margin-bottom: 2em;
+}
+
+.settings {
+	border: $borderStyle;
 }
 
 .buttons, .playerInput, .settingsElements {
@@ -34,6 +39,7 @@
 }
 
 
+
 .teamScoreElement {
 
 	button {
@@ -46,8 +52,21 @@
 .clickable:hover {
 	border-width: 3px;
 	box-sizing: border-box;
-	shadow: inset 0 0 5px #eee;
+	shadow: inset 0 0 5px rgb(22, 90, 255);
 }
+
+button:hover {
+	border-width: 3px;
+	box-sizing: border-box;
+	shadow: inset 0 0 5px rgb(22, 90, 255);
+}
+
+a:hover {
+	border-width: 3px;
+	box-sizing: border-box;
+	shadow: inset 0 0 5px rgb(22, 90, 255);
+}
+
 
 
 

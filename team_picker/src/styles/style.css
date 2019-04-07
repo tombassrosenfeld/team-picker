@@ -1,8 +1,28 @@
 @import 'reset.css';
-@font-face {}
+@font-face {
+  font-family: "Montserrat", sans-serfif;
+  src: url("../fonts/Montserrat-Black.ttf") format("truetype");
+  font-family: "Work Sans", sans-serif;
+  src: url("../fonts/WorkSans-Light.ttf") format("truetype");
+}
+body, a, button {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+}
+
+body, a, button {
+  color: #465055;
+}
+
 h1 {
   font-size: 2.5em;
   text-align: center;
+  color: #fff;
 }
 @media (max-width: 550px) {
   h1 {
@@ -12,10 +32,6 @@ h1 {
 
 h2, thead {
   font-size: 1.5em;
-}
-
-thead td {
-  text-align: center;
 }
 
 tbody tr {
@@ -44,6 +60,21 @@ form p {
   text-align: center;
 }
 
+.footer a {
+  padding: 0;
+  border: none;
+  background-color: inherit;
+  background: inherit;
+}
+.footer a, .footer p {
+  font-size: 0.8em;
+  color: #fff;
+}
+
+.footer a:hover {
+  color: #165aff;
+}
+
 body {
   font-size: 100%;
   margin: 0;
@@ -54,11 +85,26 @@ body {
   }
 }
 
+html {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  min-height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 .app {
-  background-color: #fff;
+  position: relative;
+  padding-bottom: 4rem;
+  min-height: 100%;
+  background-color: #fafafa;
   margin: 0 4em;
-  height: 100vh;
-  overflow: scroll;
   box-shadow: 0px 0px 10px 1px rgba(5, 5, 2, 0.2);
 }
 @media (max-width: 500px) {
@@ -81,7 +127,7 @@ table {
   display: inline-block;
   display: flex;
   flex-direction: column;
-  border: 1px solid #eee;
+  border: 1px solid #d1d4d9;
   width: 8em;
   float: left;
   justify-content: center;
@@ -109,7 +155,8 @@ table {
 }
 
 .playerList {
-  width: 16em;
+  width: 14em;
+  margin: 0;
 }
 
 .leagueScreen tr {
@@ -127,7 +174,7 @@ table {
   justify-content: flex-start;
   flex-direction: column;
   padding: 0;
-  border: 1px solid #eee;
+  border: 1px solid #d1d4d9;
   width: 100%;
 }
 
@@ -158,28 +205,38 @@ table {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  border: 1px solid #eee;
+  border: 1px solid #d1d4d9;
 }
 
 .tableHeader {
-  border: 1px solid #eee;
+  border: 1px solid #d1d4d9;
 }
 
-.Header {
+.Header, .footer {
   display: flex;
-  justify-content: center;
-  background: linear-gradient(172deg, #333, #444);
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background: linear-gradient(172deg, #555, #444);
 }
-.Header h1 {
-  color: #dde;
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .formElements, .settings {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-around;
   margin-bottom: 2em;
+}
+
+.settings {
+  border: 1px solid #d1d4d9;
 }
 
 .buttons, .playerInput, .settingsElements {
@@ -211,7 +268,19 @@ table {
 .clickable:hover {
   border-width: 3px;
   box-sizing: border-box;
-  shadow: inset 0 0 5px #eee;
+  shadow: inset 0 0 5px #165aff;
+}
+
+button:hover {
+  border-width: 3px;
+  box-sizing: border-box;
+  shadow: inset 0 0 5px #165aff;
+}
+
+a:hover {
+  border-width: 3px;
+  box-sizing: border-box;
+  shadow: inset 0 0 5px #165aff;
 }
 
 button, a {

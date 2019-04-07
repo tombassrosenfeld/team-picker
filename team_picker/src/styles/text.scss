@@ -1,17 +1,33 @@
 @font-face{
-	// font-family: 'Poppins', sans-serfif;
-	// src: url('../fonts/Poppins-Light.ttf') format('truetype'),
-	// 	 url('../fonts/Poppins-LightItalic.ttf') format('truetype'),
-	// 	 url('../fonts/Poppins-Bold.ttf') format('truetype');
+	font-family: 'Montserrat', sans-serfif;
+	src: url('../fonts/Montserrat-Black.ttf') format('truetype');
+		 
 
-	// font-family: 'Nunito', sans-serif;
-	// 	 src: url('../fonts/Nunito-ExtraLight.ttf') format('truetype');
-	// 	 src: url('../fonts/Nunito-ExtraLightItalic.ttf') format('truetype');
+	font-family: 'Work Sans', sans-serif;
+	src: url('../fonts/WorkSans-Light.ttf') format('truetype');
+}
+
+
+body, a, button {
+ font-family: 'Work Sans', sans-serif;
+ font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+ font-family: 'Montserrat', sans-serif;
+ font-weight: 900;
+}
+
+
+body, a, button { 
+	color: rgb(70, 80, 85);
+
 }
 
 h1 {
 	font-size: 2.5em;
 	text-align: center;
+	color: #fff;
 
 
 	@media (max-width: $mobileMaxWidth ){
@@ -27,7 +43,8 @@ h2, thead {
 
 thead td {
 	
-	text-align: center;
+	// text-align: center;
+
 }
 
 tbody tr {
@@ -57,8 +74,24 @@ form p {
 	text-align: center;
 }
 
-// .headerLink {
-// 	display: inline;
-// }
+.footer {
+	a {
+		
+		padding: 0;
+		border: none;
+		background-color: inherit;
+		background: inherit;
+
+	}
+	a, p {
+		font-size: 0.8em;
+		color: #fff;
+
+	}
+}
+
+.footer a:hover {
+	color: rgb(22, 90, 255);
+}
 
 
