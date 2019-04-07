@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TeamScoreElement from '../TeamScoreElement';
 import Leaguetable from '../Leaguetable/';
 
+
 class LeagueScreen extends Component {
 
 	constructor(props){
@@ -15,8 +16,25 @@ class LeagueScreen extends Component {
 		this.handleFixturesClick = this.handleFixturesClick.bind(this);
 		this.handleResultsClick = this.handleResultsClick.bind(this);
 		this.handleLeagueClick = this.handleLeagueClick.bind(this);
+		
+		this.getInitialState = this.getInitialState.bind(this);
+		
 	}
 
+	componentDidMount() {
+		let width = window.innerWidth;
+		if (width < 550) {
+			this.setState({
+				displayFixtures: false,
+				displayResults: false,
+				displayLeaguetable: true,
+			})
+		}
+	}
+
+	getInitialState() {
+    return  window.innerWidth;
+  }
 
 	handleFixturesClick(e) {
 		this.setState({ displayFixtures: !this.state.displayFixtures });
@@ -31,6 +49,9 @@ class LeagueScreen extends Component {
 	}
 
 	render() {
+
+		
+
 		return (
 			<div className="leagueScreen container">
 				<div className="container">
