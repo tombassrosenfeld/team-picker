@@ -41,10 +41,12 @@ class PlayerEntry extends Component {
 	}
 
 	handleSubmit(e) {
-		
-		
 		this.state.players.length === this.props.totalPlayers ? this.props.savePlayers(this.state) : this.setState({ errorMessage: `You need to add ${ this.props.totalPlayers - this.state.players.length } more player${ this.props.totalPlayers - this.state.players.length !== 1 ? "s" : "" }.`});
 	}
+
+	componentDidMount(){
+   this.playerName.focus(); 
+}
 
 	
 
@@ -59,11 +61,28 @@ class PlayerEntry extends Component {
 							<input 
 								onChange={ this.handleChange }
 								value={ this.state.input }
+								ref={(input) => { this.playerName = input; }}
 								id="playerName" 
 								type="text" 
-								name="PlayerName" 
+								name="playerName" 
 							/>
 							<p className="errorMessage">{ this.state.errorMessage }</p>
+							{
+								<div className="tableContainer">
+									<table className="playerList table">
+										<tbody>
+											{
+												this.state.players.map(( item, i ) => (
+													<tr key={ i }>
+														<td className="numberCol">{ i + 1 }</td> 
+														<td>{ item }</td>
+													</tr>
+												))
+											}
+										</tbody>
+									</table>
+								</div>
+							}	
 						</div>
 						<div className="buttons">
 							<button
@@ -77,23 +96,7 @@ class PlayerEntry extends Component {
 						</div>  
 					</div>
 				</form>
-				{
-					!this.state.players ? null : 
-					<div className="tableContainer">
-						<table className="playerList table">
-							<tbody>
-								{
-									this.state.players.map(( item, i ) => (
-										<tr key={ i }>
-											<td className="numberCol">{ i + 1 }</td> 
-											<td>{ item }</td>
-										</tr>
-									))
-								}
-							</tbody>
-						</table>
-					</div>
-				}
+				
 			</div>
 		);
 	}
