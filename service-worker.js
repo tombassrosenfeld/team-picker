@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/tombassrosenfeld/tech_challenge_201804/precache-manifest.73e174bf884a83eec8fd245fa65898a9.js"
+  "/tombassrosenfeld/tech_challenge_201804/precache-manifest.f4787dfdc6c350b74c03828b38566bce.js"
 );
 
 workbox.clientsClaim();
