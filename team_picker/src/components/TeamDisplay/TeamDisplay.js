@@ -22,7 +22,7 @@ class TeamDisplay extends Component {
 	render() {
 		return (
 			<div className="TeamDisplay container">
-				<h1>Here are your teams!</h1>
+				<h2>Here are your teams!</h2>
 				<div className="tableContainer">  
 					{
 						this.props.teams.map(({ players }, i) => (
