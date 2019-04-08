@@ -21,6 +21,13 @@ If your tool requires a particular environment to run (e.g. Node or PHP) then th
 
 You might want to show your experience and competence with Git by version managing your project from the start and providing a link to the repository on GitHub.
 
-# Styling
-Sass is used for all stying in the app. 
-Navigate to the src directory in terminal and use `sass --watch styles/style.sass:styles/style.css` to compile the css file. 
+# Get Started: 
+* Clone or download and run `npm install`. 
+* For styles, run `sass --watch styles/style.scss:styles/style.css` (I'll change this to use gulp when I have a chance since Ruby Sass has been depricated).
+
+
+
+
+
+
+
