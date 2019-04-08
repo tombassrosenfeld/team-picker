@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/tombassrosenfeld/tech_challenge_201804/precache-manifest.f4787dfdc6c350b74c03828b38566bce.js"
+  "/team-picker/precache-manifest.03b6bc6c48bb43c762008c47b0af0b8e.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/tombassrosenfeld/tech_challenge_201804/index.html", {
+workbox.routing.registerNavigationRoute("/team-picker/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });

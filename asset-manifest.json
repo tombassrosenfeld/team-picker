@@ -1,14 +1,14 @@
 {
-  "main.css": "/tombassrosenfeld/tech_challenge_201804/static/css/main.13e1cbe5.chunk.css",
-  "main.js": "/tombassrosenfeld/tech_challenge_201804/static/js/main.0a4dc3f4.chunk.js",
-  "main.js.map": "/tombassrosenfeld/tech_challenge_201804/static/js/main.0a4dc3f4.chunk.js.map",
-  "runtime~main.js": "/tombassrosenfeld/tech_challenge_201804/static/js/runtime~main.3688b5d7.js",
-  "runtime~main.js.map": "/tombassrosenfeld/tech_challenge_201804/static/js/runtime~main.3688b5d7.js.map",
-  "static/js/2.92358e24.chunk.js": "/tombassrosenfeld/tech_challenge_201804/static/js/2.92358e24.chunk.js",
-  "static/js/2.92358e24.chunk.js.map": "/tombassrosenfeld/tech_challenge_201804/static/js/2.92358e24.chunk.js.map",
-  "index.html": "/tombassrosenfeld/tech_challenge_201804/index.html",
-  "precache-manifest.f4787dfdc6c350b74c03828b38566bce.js": "/tombassrosenfeld/tech_challenge_201804/precache-manifest.f4787dfdc6c350b74c03828b38566bce.js",
-  "service-worker.js": "/tombassrosenfeld/tech_challenge_201804/service-worker.js",
-  "static/css/main.13e1cbe5.chunk.css.map": "/tombassrosenfeld/tech_challenge_201804/static/css/main.13e1cbe5.chunk.css.map",
-  "static/media/style.css": "/tombassrosenfeld/tech_challenge_201804/static/media/WorkSans-Light.f696fb4c.ttf"
+  "main.css": "/team-picker/static/css/main.94f1e5ea.chunk.css",
+  "main.js": "/team-picker/static/js/main.e605d86e.chunk.js",
+  "main.js.map": "/team-picker/static/js/main.e605d86e.chunk.js.map",
+  "runtime~main.js": "/team-picker/static/js/runtime~main.964cb322.js",
+  "runtime~main.js.map": "/team-picker/static/js/runtime~main.964cb322.js.map",
+  "static/js/2.92358e24.chunk.js": "/team-picker/static/js/2.92358e24.chunk.js",
+  "static/js/2.92358e24.chunk.js.map": "/team-picker/static/js/2.92358e24.chunk.js.map",
+  "index.html": "/team-picker/index.html",
+  "precache-manifest.03b6bc6c48bb43c762008c47b0af0b8e.js": "/team-picker/precache-manifest.03b6bc6c48bb43c762008c47b0af0b8e.js",
+  "service-worker.js": "/team-picker/service-worker.js",
+  "static/css/main.94f1e5ea.chunk.css.map": "/team-picker/static/css/main.94f1e5ea.chunk.css.map",
+  "static/media/style.css": "/team-picker/static/media/WorkSans-Light.f696fb4c.ttf"
 }
