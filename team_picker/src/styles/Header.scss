@@ -3,7 +3,10 @@
 	justify-content: space-around;
 	flex-wrap: wrap;
 	background: $headerFooterBG;
-
+}
+	
+.Header a, .Header a:hover {
+	border: none;
 }
 
 .footer {

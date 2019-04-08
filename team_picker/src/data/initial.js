@@ -6,6 +6,7 @@ const initial = {
 	teams: [],
 	fixtures: [],
 	leaguetable: [],
+	league: false,
 }
 
 export default initial;

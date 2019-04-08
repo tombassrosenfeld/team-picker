@@ -47,7 +47,7 @@ input, button, label, p, h2, a {
   margin: 1em;
 }
 
-a, button {
+a, button, .clickable {
   text-decoration: none;
   text-align: center;
   box-sizing: border-box;
@@ -129,7 +129,7 @@ table {
   display: flex;
   flex-direction: column;
   border: 1px solid #d1d4d9;
-  width: 8em;
+  min-width: 8em;
   float: left;
   justify-content: center;
   align-items: center;
@@ -220,6 +220,10 @@ table {
   background: linear-gradient(172deg, #555, #444);
 }
 
+.Header a, .Header a:hover {
+  border: none;
+}
+
 .footer {
   position: absolute;
   right: 0;
@@ -237,6 +241,10 @@ table {
 }
 
 .settings {
+  border: 1px solid #d1d4d9;
+}
+
+.formContainer {
   border: 1px solid #d1d4d9;
 }
 

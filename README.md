@@ -20,3 +20,7 @@ You should document what you have done and why, to demonstrate your planning pro
 If your tool requires a particular environment to run (e.g. Node or PHP) then this should be documented (as a readme.md?) with instructions provided (e.g. a Vagrantfile, package.json, gulpfile.js etc.). In short: I shouldn't struggle to get it working on my local machine, and you shouldn't assume I know how it is supposed to work.
 
 You might want to show your experience and competence with Git by version managing your project from the start and providing a link to the repository on GitHub.
+
+# Styling
+Sass is used for all stying in the app. 
+Navigate to the src directory in terminal and use `sass --watch styles/style.sass:styles/style.css` to compile the css file. 

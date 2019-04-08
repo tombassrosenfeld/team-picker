@@ -10,8 +10,8 @@ class Settings extends Component {
 		super(props)
 
 		this.state = ({
-			numberOfTeams: 2,
-			teamSize: 5,
+			numberOfTeams: this.props.numberOfTeams,
+			teamSize: this.props.teamSize,
 			errorMessage: '',
 		})
 

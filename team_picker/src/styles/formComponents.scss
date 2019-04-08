@@ -17,6 +17,10 @@
 	border: $borderStyle;
 }
 
+.formContainer {
+	border: $borderStyle;
+}
+
 .buttons, .playerInput, .settingsElements {
 	display: flex;
 	flex-direction: column;
@@ -80,6 +84,8 @@ button, a {
 		width: 16em;
 	}
 }
+
+
 
 input {
 	width: 16em;

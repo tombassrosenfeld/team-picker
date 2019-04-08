@@ -121,6 +121,7 @@ let sortLeaguetable = (state) => {
 	return{
 		...state,
 		leaguetable,
+		league: true,
 	}
 
 }
