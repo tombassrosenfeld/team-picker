@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Route,
   Switch,
 } from "react-router-dom";
-
 
 import Header from '../Header';
 import PlayerEntry from '../PlayerEntry/';
@@ -14,16 +13,13 @@ import FourOhFour from '../FourOhFour';
 import LeagueScreen from '../LeagueScreen';
 import Footer from '../Footer';
 
-
-
-
 import '../../styles/style.css';
 
 class App extends Component {
   render() {
 
 	return (
-		<Router>
+		<BrowserRouter basename={ process.env.PUBLIC_URL }>
 			<div className="app">
 				<Header />
 				<Switch>
@@ -35,7 +31,7 @@ class App extends Component {
 				</Switch>
 				<Footer />
 			</div>
-		</Router>
+		</BrowserRouter>
 	);
   }
 }
