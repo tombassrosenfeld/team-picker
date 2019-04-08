@@ -7,16 +7,16 @@ class Header extends Component {
 
 	render() {
 	    return (
+		    <header className="Header">
+			    	<div>
 		    	<Link className="headerLink"
 		    		to="/"
 		    	>
-		    <header className="Header">
-			    	<div>
 			    		<h1>Whose Side Are You On?</h1>
+		    	</Link>
 			    	</div>
 		    		
 		    </header>
-		    	</Link>
 	    );
 	}
 }

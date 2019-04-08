@@ -10,7 +10,7 @@ table {
 	display: flex;
 	flex-direction: column;
 	border: $borderStyle;
-	width: 8em;
+	min-width: 8em;
 	float: left;
 	justify-content: center;
 	align-items: center;
